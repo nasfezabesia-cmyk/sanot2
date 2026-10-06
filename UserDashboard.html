@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyCraft Dashboard</title>
+<link rel="stylesheet" href="UserDashboard.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+  <!-- Hamburger Menu -->
+  <div class="menu-icon" id="menu-icon">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+
+    <h1>StudyCraft</h1>
+
+    <nav>
+      <a href="dashboard.html" class="nav-item active">
+        <span class="icon">🏠</span>
+        <span>Dashboard</span>
+      </a>
+      <a href="quizgenerator.html" class="nav-item">
+        <span class="icon">📚</span>
+        <span>Quiz Generator</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="icon">🧠</span>
+        <span>Flashcards</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="icon">📊</span>
+        <span>Progress</span>
+      </a>
+    </nav>
+
+    <div class="bottom-section">
+      <a href="#" class="nav-item">
+        <span class="icon">⚙️</span>
+        <span>Settings</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="icon">🚪</span>
+        <span>Logout</span>
+      </a>
+    </div>
+
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="top-bar">
+      <div class="search-bar">
+        <input type="text" placeholder="Search your library...">
+      </div>
+    </header>
+
+    <div class="card">
+      <h2>Hi, Client 👋</h2>
+      <p class="card-text">Welcome back to StudyCraft!</p>
+    </div>
+
+    <div class="study-grid">
+      <div class="study-card"><div class="study-icon">📚</div><h3>Mathematics</h3></div>
+      <div class="study-card"><div class="study-icon">🧬</div><h3>Biology</h3></div>
+      <div class="study-card"><div class="study-icon">⚖️</div><h3>History</h3></div>
+    </div>
+
+  </main>
+
+  <!-- Upload Button -->
+  <div class="upload-container">
+    <label for="file-upload" class="upload-btn">
+      <span class="upload-icon">📁</span>
+      <span class="upload-text">Upload Documents</span>
+    </label>
+    <input type="file" id="file-upload" multiple style="display:none;">
+  </div>
+
+</div>
+
+<script>
+const menuIcon = document.getElementById('menu-icon');
+const sidebar = document.getElementById('sidebar');
+
+menuIcon.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+  menuIcon.classList.toggle('active');
+});
+
+document.getElementById('file-upload').addEventListener('change', function(e){
+  const files = e.target.files;
+  if(files.length > 0){
+    alert(files.length + " file(s) selected: " + files[0].name);
+  }
+});
+</script>
+
+</body>
+</html>
